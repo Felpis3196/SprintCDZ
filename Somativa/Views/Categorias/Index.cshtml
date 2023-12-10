@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Somativa.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-black">Categorias</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success m-2">
+        <svg bootstrap-icon="Pencil" width="16" height="16" aria-label="Editar"></svg>
+        Nova Categoria
+    </a>
+</p>
+<table class="table table-striped table-hover table-responsive">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td class="text-end">
+                    <a asp-action="Edit" class="btn btn-primary m-2" asp-route-id="@item.CategoriaId">
+                        <svg bootstrap-icon="Pencil" width="16" height="16" aria-label="Editar"></svg>
+                        Editar
+                    </a>
+                    <a asp-action="Details" class="btn btn-warning m-2" asp-route-id="@item.CategoriaId">
+                        <svg bootstrap-icon="InfoCircle" width="16" height="16" aria-label="Mais"></svg>
+                        Detalhes
+                    </a>
+                    <a asp-action="Delete" class="btn btn-danger m-2" asp-route-id="@item.CategoriaId">
+                        <svg bootstrap-icon="Trash" width="18" height="18" aria-label="Deletar"></svg>
+                        Excluir
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,38 @@
+﻿@model Somativa.Models.Compra
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h4 class="text-black">Nova Compra</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4  text-black">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nota" class="control-label"></label>
+                <input asp-for="Nota" class="form-control" />
+                <span asp-validation-for="Nota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataHora" class="control-label"></label>
+                <input asp-for="DataHora" class="form-control" />
+                <span asp-validation-for="DataHora" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-danger m-2">
+                    <svg bootstrap-icon="ArrowReturnLeft" width="20" height="20" aria-label="Voltar"></svg>
+                    Voltar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

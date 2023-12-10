@@ -1,0 +1,57 @@
+﻿@model Somativa.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4 class="text-black">Novo Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4  text-black">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Nome" class="form-control" placeholder=" " />
+                <label asp-for="Nome" class="form-label"></label>
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Endereco" class="form-control" placeholder=" "/>
+                <label asp-for="Endereco" class="control-label"></label>
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Telefone" class="form-control" placeholder=" " />
+                <label asp-for="Telefone" class="control-label"></label>
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Cpf" class="form-control" placeholder=" " />
+                <label asp-for="Cpf" class="control-label"></label>
+                <span asp-validation-for="Cpf" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Email" class="form-control" placeholder=" "  />
+                <label asp-for="Email" class="control-label"></label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Nascimento" type="date" class="form-control" placeholder=" " />
+                <label asp-for="Nascimento" class="control-label"></label>
+                <span asp-validation-for="Nascimento" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-danger m-2">
+                    <svg bootstrap-icon="ArrowReturnLeft" width="20" height="20" aria-label="Voltar"></svg>
+                    Voltar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

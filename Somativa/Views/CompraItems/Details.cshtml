@@ -1,0 +1,48 @@
+﻿@model Somativa.Models.CompraItem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CompraItem</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Compra)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Compra.CompraId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Produto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Produto.ProdutoId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Unitario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Unitario)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.CompraItemId" class="btn btn-primary">
+        <svg bootstrap-icon="Pen" width="20" height="20" aria-label="Voltar"></svg>
+        Editar
+    </a>
+    <a asp-controller="CompraItems" asp-action="Index" asp-route-id=@Model.CompraId class="btn btn-danger m-2">
+        <svg bootstrap-icon="ArrowReturnLeft" width="20" height="20" aria-label="Voltar"></svg>
+        Voltar
+    </a>
+</div>
